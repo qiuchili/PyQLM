@@ -36,9 +36,8 @@ def F(rhoM, proDict): # 目标函数
 	return res
 
 def Grad_F(rhoM, proDict): # 目标函数的导数
-
-	# dim = proList[0].shape[0]
-	dim = 2
+	element = list(proDict.items())[0][1][1]
+	dim = len(element)
 	res = np.zeros((dim, dim))
 	for pm in  proDict:
 		P = np.trace(np.dot(proDict[pm][1], rhoM))
